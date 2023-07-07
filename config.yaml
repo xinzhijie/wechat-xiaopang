@@ -1,0 +1,58 @@
+logging:
+  version: 1
+  disable_existing_loggers: False
+
+  formatters:
+    simple:
+      format: "%(asctime)s %(message)s"
+      datefmt: "%Y-%m-%d %H:%M:%S"
+    error:
+      format: "%(asctime)s %(name)s %(levelname)s %(filename)s::%(funcName)s[%(lineno)d]:%(message)s"
+
+  handlers:
+    console:
+      class: logging.StreamHandler
+      level: INFO
+      formatter: simple
+      stream: ext://sys.stdout
+
+    info_file_handler:
+      class: logging.handlers.RotatingFileHandler
+      level: INFO
+      formatter: simple
+      filename: wx_info.log
+      maxBytes: 10485760 # 10MB
+      backupCount: 20
+      encoding: utf8
+
+    error_file_handler:
+      class: logging.handlers.RotatingFileHandler
+      level: ERROR
+      formatter: error
+      filename: wx_error.log
+      maxBytes: 10485760 # 10MB
+      backupCount: 20
+      encoding: utf8
+
+  root:
+    level: INFO
+    handlers: [console, info_file_handler, error_file_handler]
+
+groups:
+  enable: [35014668951@chatroom, 19573769116@chatroom, 20325241250@chatroom, 34414672040@chatroom] # 允许响应的群 roomId，大概长这样：2xxxxxxxxx3@chatroom
+
+news:
+  receivers: [35014668951@chatroom] # 定时新闻接收人（roomid 或者 wxid）
+
+# 如果要使用 ChatGPT，取消下面的注释并填写相关内容
+chatgpt:
+  # key: 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
+  key: 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
+  api: https://api.openai.com/v1 # 如果你不知道这是干嘛的，就不要改
+  proxy: http://localhost:7890
+  prompt: 蓉妹 # 默认角色设定，如："你是智能聊天机器人,你叫小小，调皮可爱喜欢二次元的小萝莉"
+
+# 如果需要暴露 HTTP 接口，取消下面的注释
+# http:
+#   host: 0.0.0.0
+#   port: 9999

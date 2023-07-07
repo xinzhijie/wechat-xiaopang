@@ -1,0 +1,6 @@
+[2023-06-06 14:24:53.813] [info] [WCF] [sdk.cpp::122::WxDestroySDK] WxDestroySDK done.
+[2023-06-19 10:18:53.974] [info] [WCF] [sdk.cpp::122::WxDestroySDK] WxDestroySDK done.
+[2023-06-19 11:02:57.463] [info] [WCF] [sdk.cpp::122::WxDestroySDK] WxDestroySDK done.
+[2023-06-19 11:19:21.529] [info] [WCF] [sdk.cpp::122::WxDestroySDK] WxDestroySDK done.
+[2023-06-19 11:24:24.617] [info] [WCF] [sdk.cpp::122::WxDestroySDK] WxDestroySDK done.
+[2023-06-27 09:25:47.743] [info] [WCF] [sdk.cpp::122::WxDestroySDK] WxDestroySDK done.
